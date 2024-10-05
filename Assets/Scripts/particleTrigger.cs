@@ -8,8 +8,8 @@ public class TriggerParticle : MonoBehaviour
     public ParticleSystem particleSystem; // Particle System referansı
     [SerializeField] private GameObject cubeCloseCam;
     [SerializeField] private GameObject cubeFarCam;
-
-    private void OnCollisionEnter(Collider other)
+    
+    private void OnTriggerEnter(Collider other)
     {
         
         // Eğer player Cube objesine dokunduysa
