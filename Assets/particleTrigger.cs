@@ -4,11 +4,12 @@ public class TriggerParticle : MonoBehaviour
 {
     public ParticleSystem particleSystem; // Particle System referansı
 
-    private void OnCollisionEnter(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
         // Eğer player Cube objesine dokunduysa
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
+            other.transform.localRotation = Quaternion.Euler()
             // Particle System'i başlat
             if (particleSystem != null)
             {
