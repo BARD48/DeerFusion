@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
-    public GameObject meteorPrefab; // Meteor prefabý
-    public float spawnInterval = 2f; // Spawn aralýðý
-    public float spawnRangeX = 8f; // X aralýðý
+    public GameObject meteorPrefab; // Meteor prefabï¿½
+    public float spawnInterval = 2f; // Spawn aralï¿½ï¿½ï¿½
+    public float spawnRangeX = 8f; // X aralï¿½ï¿½ï¿½
     public Vector3 movementSpeed = new Vector3(0, 0, 5.0f);
-    public int meteorSpawnNumber = 30; // Spawn edilecek meteor sayýsý
+    public int meteorSpawnNumber = 30; // Spawn edilecek meteor sayï¿½sï¿½
 
     private void Start()
     {
@@ -23,23 +23,23 @@ public class MeteorSpawner : MonoBehaviour
             float randomX = Random.Range(-spawnRangeX, spawnRangeX);
             Vector3 spawnPosition = new Vector3(randomX, 0.15f, 0.0f);
 
-            // Meteor prefabýný belirlenen pozisyonda instantiate et
+            // Meteor prefabï¿½nï¿½ belirlenen pozisyonda instantiate et
             GameObject meteorInstance = Instantiate(meteorPrefab, spawnPosition, Quaternion.identity);
             meteorInstance.transform.localRotation = Quaternion.Euler(90, 270, 0);
-            // Meteorun Rigidbody bileþeni olup olmadýðýný kontrol et
+            // Meteorun Rigidbody bileï¿½eni olup olmadï¿½ï¿½ï¿½nï¿½ kontrol et
             Rigidbody rb = meteorInstance.GetComponent<Rigidbody>();
 
-            // Eðer Rigidbody yoksa, ekle
+            // Eï¿½er Rigidbody yoksa, ekle
             if (rb == null)
             {
                 rb = meteorInstance.AddComponent<Rigidbody>();
             }
 
-            // Rigidbody kullanarak yerçekimi ve hýz ayarlarýný yap
-            rb.useGravity = false; // Yerçekimini iptal et
-            rb.velocity = movementSpeed; // Meteorun hareket hýzýný ayarla
+            // Rigidbody kullanarak yerï¿½ekimi ve hï¿½z ayarlarï¿½nï¿½ yap
+            rb.useGravity = false; // Yerï¿½ekimini iptal et
+            rb.velocity = movementSpeed; // Meteorun hareket hï¿½zï¿½nï¿½ ayarla
 
-            // Belirtilen aralýkla bekle
+            // Belirtilen aralï¿½kla bekle
             yield return new WaitForSeconds(spawnInterval);
         }
     }
