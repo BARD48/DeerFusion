@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Cinemachine;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class TriggerParticle : MonoBehaviour
 {
-    public ParticleSystem particleSystem; // Particle System referansı
+    [SerializeField] private ParticleSystem particleSystem; // Particle System referansı
     [SerializeField] private GameObject cubeCloseCam;
     [SerializeField] private GameObject cubeFarCam;
     

@@ -7,7 +7,7 @@ public class MeteorSpawner : MonoBehaviour
     public GameObject meteorPrefab; // Meteor prefabý
     public float spawnInterval = 2f; // Spawn aralýðý
     public float spawnRangeX = 8f; // X aralýðý
-    public Vector3 movementSpeed = new Vector3(0, 0, -5.0f);
+    public Vector3 movementSpeed = new Vector3(0, 0, 5.0f);
     public int meteorSpawnNumber = 30; // Spawn edilecek meteor sayýsý
 
     private void Start()
@@ -21,11 +21,11 @@ public class MeteorSpawner : MonoBehaviour
         {
             // Rastgele X konumu belirle
             float randomX = Random.Range(-spawnRangeX, spawnRangeX);
-            Vector3 spawnPosition = new Vector3(randomX, 0.1f, 0.0f);
+            Vector3 spawnPosition = new Vector3(randomX, 0.15f, 0.0f);
 
             // Meteor prefabýný belirlenen pozisyonda instantiate et
             GameObject meteorInstance = Instantiate(meteorPrefab, spawnPosition, Quaternion.identity);
-            meteorInstance.transform.localRotation = Quaternion.Euler(90, 90, 0);
+            meteorInstance.transform.localRotation = Quaternion.Euler(90, 270, 0);
             // Meteorun Rigidbody bileþeni olup olmadýðýný kontrol et
             Rigidbody rb = meteorInstance.GetComponent<Rigidbody>();
 
