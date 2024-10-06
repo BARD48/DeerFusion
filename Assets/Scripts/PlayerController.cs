@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
-    private float _health = 1.0f;
-    
+    public float Health { get; private set; } = 0.5f;
+
     public Transform cubeTransform;
 
     public Rigidbody rb;
@@ -26,6 +26,6 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _health -= damage;
+        Health -= damage;
     }
 }

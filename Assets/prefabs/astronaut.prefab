@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: astronaut
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 757c2d737d2478642babee8983030261, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 9155276747989737948, guid: 757c2d737d2478642babee8983030261, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MeteorShadow
+  - HealthBar
   layers:
   - Default
   - TransparentFX
